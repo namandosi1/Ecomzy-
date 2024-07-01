@@ -1,13 +1,21 @@
 import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import { Route } from "react-router-dom";
+import {Routes} from "react-router-dom"
 
-function App() {
-  return (
-    <main className="flex justify-center gap-4 flex-col min-h-screen">
-      <h1 className="text-3xl text-center font-bold underline">React & Tailwind CSS Starter Pack</h1>
-      <p className="text-center text-xl">This is a starter pack for React & Tailwind CSS projects.</p>
-      <img src="https://bit.ly/3wsmzTy" alt="meme" className="mx-auto" />
-    </main>
-  );
-}
+
+const App = () => {
+  return (<div>
+        <div className="bg-slate-900">
+          <Navbar/>
+        </div>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/cart" element={<Cart/>} />
+        </Routes>
+  </div>)
+};
 
 export default App;
